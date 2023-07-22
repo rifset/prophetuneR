@@ -295,7 +295,7 @@ result_parallel <- lapply(try_period, function(period) {
 result_parallel <- do.call(rbind, result_parallel)
 ```
 
-<img src="description_files/figure-gfm/scalability-result-1.png" style="display: block; margin: auto;" />
+<img src="notebook/scalability-result-1.png" style="display: block; margin: auto;" />
 
 On the scalability test, `par_cross_validation()` performs much better
 on higher iteration count (fewer period means more forecasts need to be
