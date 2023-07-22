@@ -1,0 +1,24 @@
+Package: prophetuneR
+Title: Parallelized Cross-validation and Hyperparameter Tuning for prophet
+Version: 0.0.9.0
+Authors@R: 
+    person("Arif", "Setyawan", email = "arifsety99@gmail.com", role = c("aut", "cre"))
+Author: Arif Setyawan [aut, cre]
+Maintainer: Arif Setyawan <arifsety99@gmail.com>
+Description: This package provides convenience method to perform cross-validation
+  in parallel, also hyperparameter tuning via grid search using parallelized
+  cross-validation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends:
+    R (>= 3.5.0)
+Imports:
+    dplyr (>= 0.7.7),
+    prophet,
+    parallel
+Suggests: 
+    testthat (>= 3.0.0),
+    lubridate
+Config/testthat/edition: 3
