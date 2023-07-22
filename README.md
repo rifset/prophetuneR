@@ -39,7 +39,7 @@ install.packages('prophet')
 Then you can run this code
 
 ``` r
-devtools::install_github('rifset/prophetuneR)
+devtools::install_github('rifset/prophetuneR')
 ```
 
 Loading the package
