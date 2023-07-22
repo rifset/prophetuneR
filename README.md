@@ -15,7 +15,7 @@ prophet
 
 # Description
 
-> This package provides convenient method to perform cross-validation
+> This package provides a convenient method to perform cross-validation testing
 > in parallel, also hyperparameter tuning via grid search using
 > parallelized cross-validation.
 
