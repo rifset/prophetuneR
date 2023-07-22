@@ -1,7 +1,7 @@
 prophetuneR: Parallelized Cross-validation and Hyperparameter Tuning for
 prophet
 ================
-Author: Arif Setyawan
+**Author: Arif Setyawan**
 
 - [Description](#description)
 - [Installation](#installation)
@@ -15,15 +15,15 @@ Author: Arif Setyawan
 
 # Description
 
-> This package provides convenience method to perform cross-validation
+> This package provides convenient method to perform cross-validation
 > in parallel, also hyperparameter tuning via grid search using
 > parallelized cross-validation.
 
 Since there is no built-in function to do hyperparameter tuning in
-`prophet` (when this package was created), the function `tune_prophet()`
+[`prophet`](https://github.com/facebook/prophet) (when this package was created), the function `tune_prophet()`
 will come in handy. Also, parallel processing using
 `par_cross_validation()` is applied to speed up the tuning works. This
-package depends on the original `prophet`, so make sure you install it
+package depends on the original [`prophet`](https://github.com/facebook/prophet)`, so make sure you install it
 before using this package.
 
 # Installation
