@@ -267,7 +267,7 @@ print(result)
 ```
 
 The results show that `par_cross_validation()` with 4 cores performs
-$\sim 53\%$ better than the original `cross_validation()`
+$\sim 53\\%$ better than the original `cross_validation()`
 ($12.16s \rightarrow 7.93s$) on average aggregated from 10 runs.
 
 ## Scalability
