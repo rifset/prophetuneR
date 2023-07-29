@@ -1,7 +1,11 @@
 prophetuneR: Parallelized Cross-validation and Hyperparameter Tuning for
 prophet
 ================
-Author: Arif Setyawan
+
+![](https://github.com/rifset/prophetuneR/actions/workflows/R-CMD-check.yaml/badge.svg)
+
+**Author: Arif Setyawan**
+
 
 - [Description](#description)
 - [Installation](#installation)
