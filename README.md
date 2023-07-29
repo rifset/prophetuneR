@@ -1,10 +1,12 @@
 prophetuneR: Parallelized Cross-validation and Hyperparameter Tuning for
 prophet
 ================
-**Author: Arif Setyawan**
+Author: Arif Setyawan
 
 - [Description](#description)
 - [Installation](#installation)
+  - [Instruction](#instruction)
+  - [Troubleshooting](#troubleshooting)
 - [Parallel cross validation
   `par_cross_validation()`](#parallel-cross-validation-par_cross_validation)
 - [Hyperparameter tuning
@@ -12,21 +14,27 @@ prophet
 - [Benchmarking](#benchmarking)
   - [Performance](#performance)
   - [Scalability](#scalability)
+- [Future development](#future-development)
 
 # Description
 
-> This package provides a convenient method to perform cross-validation testing
-> in parallel, also hyperparameter tuning via grid search using
+> This package provides a convenient method to perform cross-validation
+> testing in parallel, also hyperparameter tuning via grid search using
 > parallelized cross-validation.
 
-Since there is no built-in function to do hyperparameter tuning in
-[`prophet`](https://github.com/facebook/prophet) (when this package was created), the function `tune_prophet()`
-will come in handy. Also, parallel processing using
+Since there is no built-in function to do hyperparameter tuning in R
+version of `prophet` (when this package was created), the function
+`tune_prophet()` will come in handy. Also, parallel processing using
 `par_cross_validation()` is applied to speed up the tuning works. This
-package depends on the original [`prophet`](https://github.com/facebook/prophet)`, so make sure you install it
+package depends on the original `prophet`, so make sure you install it
 before using this package.
 
+Learn about `prophet` forecasting tool,
+[here](https://github.com/facebook/prophet).
+
 # Installation
+
+## Instruction
 
 You need to install `devtools` and `prophet` package prior to install
 `prophetuneR`. If you haven’t, run the code below
@@ -48,6 +56,14 @@ Loading the package
 library(prophet)
 library(prophetuneR)
 ```
+
+## Troubleshooting
+
+- It was reported that the installation of `devtools` might fail on R
+  version under `4.2.0`. Hence, it is preferred to use R version
+  `>4.2.0` to ensure the installation ran smoothly.
+- Make sure to have RTools installed, [click
+  here](https://cran.r-project.org/bin/windows/Rtools/) if you haven’t.
 
 # Parallel cross validation `par_cross_validation()`
 
@@ -247,7 +263,7 @@ print(result)
 ```
 
 The results show that `par_cross_validation()` with 4 cores performs
-$\sim 53.3\%$ better than the original `cross_validation()`
+$\sim 53\%$ better than the original `cross_validation()`
 ($12.16s \rightarrow 7.93s$) on average aggregated from 10 runs.
 
 ## Scalability
@@ -295,7 +311,7 @@ result_parallel <- lapply(try_period, function(period) {
 result_parallel <- do.call(rbind, result_parallel)
 ```
 
-<img src="img/scalability-result-1.png" style="display: block; margin: auto;" />
+<img src="description_files/figure-gfm/scalability-result-1.png" style="display: block; margin: auto;" />
 
 On the scalability test, `par_cross_validation()` performs much better
 on higher iteration count (fewer period means more forecasts need to be
@@ -303,4 +319,12 @@ calculated), at the weekly period (7 days) the run time remains around
 100 seconds. On the other hand, `cross_validation` poorly performs as
 the iteration count rise, its run time exponentially rose to more than
 300 seconds which means 3 times **slower** than parallel cross
-validation.
+validation. Since grid search-based hyperparameter tuning is an
+exhaustive algorithm, a faster approach is always favorable.
+
+# Future development
+
+- Since the current `tune_prophet()` is quite chatty, a switch-like
+  argument to suppress those log messages is possibly needed.
+- Implementation of alternative hyperparameter tuning algorithms such as
+  Halving Grid Search and Bayesian Optimization.
