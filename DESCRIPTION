@@ -1,6 +1,6 @@
 Package: prophetuneR
 Title: Parallelized Cross-validation and Hyperparameter Tuning for prophet
-Version: 0.0.9.0
+Version: 0.1.0.0
 Authors@R: 
     person("Arif", "Setyawan", email = "arifsety99@gmail.com", role = c("aut", "cre"))
 Author: Arif Setyawan [aut, cre]
